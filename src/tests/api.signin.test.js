@@ -9,7 +9,6 @@ describe("Sign-in", async() => {
             email: "test@email.com",
             password: "testpassword"
         })
-        console.log(resp);
         expect(resp.current).toBe(true);
     })
 

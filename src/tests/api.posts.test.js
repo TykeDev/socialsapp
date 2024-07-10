@@ -17,7 +17,7 @@ test("infinite scroll", async() => {
 })
 
 test("infinite scroll fail", async() => {
-    let resp = await getInfinitePosts({pageParam: Math.random()*10});
+    let resp = await getInfinitePosts({pageParam: Math.random()*10+1});
     expect(resp).toBe(undefined);
 })
 
@@ -28,7 +28,6 @@ test("get post by postId", async() => {
 
 test("get post by postId undefined", async() => {
     let resp = await getPostById("qqqqqqqqqqqqqq");
-    //console.log(resp)
     expect(resp).toBe(undefined);
 })
 
@@ -39,7 +38,7 @@ test("delete post fail", async() => {
 
 test("like/unlike", async() => {
     let resp = await likePost('667b3e2e0fd903d1ac69', ['667b37821bce3e38d83e', '667b4b3fece0408294b6']);
-    //expect(resp).not.toBe(undefined);
+    expect(resp).not.toBe(undefined);
 })
 
 test("save post", async() => {

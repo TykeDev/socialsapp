@@ -5,10 +5,10 @@ import { describe } from 'node:test';
 describe("Sign-up", async() => {
     test("can create account", async() => {
         let resp = await createUserAccount({
-            name: "TestAccount3",
-            email: "test3@email.com",
-            username: "testaccount3",
-            password: "testpassword3",
+            name: "TestAccount99",
+            email: "test99@email.com",
+            username: "testaccount99",
+            password: "testpassword99",
         })
         expect(resp.code).not.toBe(409);
     })
@@ -20,7 +20,7 @@ describe("Sign-up", async() => {
             username: "testaccount2",
             password: "testpassword2",
         })
-        //expect(resp.code).toBe(409);
+        expect(resp.code).toBe(409);
     })
 
     test("missing account email", async() => {
@@ -30,6 +30,6 @@ describe("Sign-up", async() => {
             username: "",
             password: "",
         })
-        //expect(resp.code).toBe(400);
+        expect(resp.code).toBe(400);
     })
 })
